@@ -1,0 +1,29 @@
+
+<div class="top-container dashboard">
+  <h1>{{editedScene.title}}</h1>
+</div>
+<div class="top-container dashboard desc">
+  <h2>Scenarii</h2>
+</div>
+<div class="elements-container">
+  <div class="container quest">
+    <hr>
+      <div class="indiv" *ngFor="let formular of editedScene.scenes;let i = index;">
+        <div class="top-container dashboard">
+          <h2>{{formular.title}}</h2>
+        </div>
+        <div class="top-container dashboard desc">
+          <h3>{{formular.description}}</h3>
+        </div>
+
+        <div class="elements-container">
+          <h1>Intrebari</h1>
+          <div class="container quest">
+            <app-qtype *ngFor="let question of formular.questions; let index = index" [type]="'view'" [question]="question" [index]="index"></app-qtype>
+
+          </div>
+        </div>
+        <hr>
+      </div>
+  </div>
+</div>

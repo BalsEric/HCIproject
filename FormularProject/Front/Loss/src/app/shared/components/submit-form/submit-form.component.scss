@@ -1,0 +1,57 @@
+@import "src/app/shared/styles/mixins";
+
+:host {
+@include style-for-tabs;
+@include crud-list-item;
+
+.mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+mat-panel-title {
+  font-size: large;
+  font-weight: bold;
+}
+.card {
+  margin-top:15px;
+}
+.dashboard {
+  display: flex;
+h1 {
+  font-size: 400%;
+  letter-spacing: 1.5px;
+}
+  .scenes {
+    margin-top:20px;
+  }
+}
+.me-text {
+  text-align: center;
+  font-size: 120%;
+  color:black;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+section {
+  margin-bottom:40px;
+}
+.jumbotron {
+  border-radius: 30px;
+}
+img {
+  border-radius: 25px;
+}
+a {
+  margin-top: 20px;
+}
+  .rdn {
+    margin:5px;
+  }
+  .questions {
+    margin-top:50px;
+    font-size:20px;
+  }
+button {
+  margin-top: 15px;
+}
+
+}

@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Editare Brosura</h1>
+<form>
+  <div mat-dialog-content class="field-container">
+    <mat-form-field class="field">
+      <mat-label>Titlu nou</mat-label>
+      <label>
+        <input matInput name="Title" required
+               [(ngModel)]="scene.title">
+      </label>
+    </mat-form-field>
+  </div>
+
+  <div class="elements-container">
+    <h2>Schimbare Scene</h2>
+    <div class="container quest">
+        <app-scene class="indiv" *ngFor="let scene of scene.scenes;let i = index;" [type]="'edit'" [scene]="scene" (handleDeleteS)="onDelete(i)"></app-scene>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button type="submit" mat-button (click)="onYesClick()">Confirm</button>
+    <button type="button" mat-button (click)="onNoClick()">Cancel</button>
+  </div>
+</form>
+

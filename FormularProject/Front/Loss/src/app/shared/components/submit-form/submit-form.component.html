@@ -1,0 +1,217 @@
+
+
+<form>
+  <p>Studiul este derulat de către Centrul de Cercetare în Psihologia Muncii și Organizațională din cadrul Universității Babeș-Bolyai, de către doctorand Maria Telecan. Acest studiu vizează modul în care angajații percep situațiile existente de la locul de muncă. Bifaţi DA, dacă sunteţi de acord să participaţi la acest studiu</p>
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button class="rdn" name="yesOrNo" [(ngModel)]="personalInfo.agree" value="{{true}}">Da</mat-radio-button>
+    <mat-radio-button class="rdn" name="yesOrNo" [(ngModel)]="personalInfo.agree" value="{{false}}">Nu</mat-radio-button>
+  </mat-radio-group>
+
+
+  <p>În acest instrument, sunt prezentate o serie de scenarii care descriu situații de muncă. Fiecare scenariu descrie o situație de muncă și vă solicită să faceți parte din situația de muncă descrisă. Citiți cu atenție fiecare scenariu și imaginați-vă cât mai bine în situația respectivă. Fiecare scenariu este urmat de o serie de enunțuri de evaluat. Astfel că, pornind de la descrierea situației din fiecare scenariu, vă rugăm să evaluați fiecare enunț completând spațiile libere sau, atunci când este cazul, să încercuiți varianta de răspuns care corespunde cel mai bine opiniei Dumneavoastră. Este important să știți că nu există răspuns corect sau greșit, iar răspunsurile oferite la evaluarea acestor scenarii sunt anonime și confidențiale. Opinia dumneavoastră onestă ne va ajuta să înțelegem mai bine modul în care angajații percep situațiile existente de la locul de muncă.
+  </p>
+
+  <div mat-dialog-content class="field-container">
+    <p>Vă rugăm să completați codul personal răspunzând întrebărilor de mai jos conform exemplului</p>
+    <div class="card" >
+      <h2 class="card-header">Prima literă a orașului în care v-ați născut </h2>
+      <div class="card-body">
+        <mat-form-field class="field">
+          <label>
+            <input matInput [(ngModel)]="personalInfo.firstLetterOfTheTownBornIn" name="1" maxlength="200">
+          </label>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="card" >
+      <h2 class="card-header">Prima literă a județului în care v-ați născut </h2>
+      <div class="card-body">
+        <mat-form-field class="field">
+          <label>
+            <input matInput [(ngModel)]="personalInfo.firstLetterOfTheRegionBornIn" name="2" maxlength="200">
+          </label>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="card" >
+      <h2 class="card-header">Suma ultimelor două cifre ale anului nașterii </h2>
+      <div class="card-body">
+        <mat-form-field class="field">
+          <label>
+            <input matInput [(ngModel)]="personalInfo.sumOfTheLast2DigitsOfBirthYear" name="3" maxlength="200">
+          </label>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="card" >
+      <h2 class="card-header">Suma dintre ziua și luna nașterii </h2>
+      <div class="card-body">
+        <mat-form-field class="field">
+          <label>
+            <input matInput [(ngModel)]="personalInfo.sumOfDayAndMonth" name="4" maxlength="200">
+          </label>
+        </mat-form-field>
+      </div>
+    </div>
+<hr>
+    <h1>Despre dumneavoastră:</h1>
+
+    <div class="card" >
+      <h2 class="card-header">Vârsta: </h2>
+      <div class="card-body">
+        <mat-form-field class="field">
+          <label>
+            <input matInput [(ngModel)]="personalInfo.age" name="5" maxlength="200">
+          </label>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="card" >
+      <h2 class="card-header">Genul: </h2>
+      <div class="card-body">
+        <mat-form-field class="field">
+          <label>
+            <input matInput [(ngModel)]="personalInfo.type" name="6" maxlength="200">
+          </label>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div class="card" >
+      <h2 class="card-header">Tip de personal: </h2>
+      <div class="card-body">
+        <mat-form-field class="field">
+          <label>
+            <input matInput [(ngModel)]="personalInfo.personalType" name="7" maxlength="200">
+          </label>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div class="card" >
+      <h2 class="card-header">Deţin gradul militar: </h2>
+      <div class="card-body">
+        <mat-form-field class="field">
+          <label>
+            <input matInput [(ngModel)]="personalInfo.militaryGrade" name="8" maxlength="200">
+          </label>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div class="card" >
+      <h2 class="card-header">Lucrez în această funcție de: </h2>
+      <div class="card-body">
+        <mat-form-field class="field">
+          <label>
+            <input matInput [(ngModel)]="personalInfo.workedFor" name="9" maxlength="200">
+          </label>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div class="card" >
+      <h2 class="card-header">Lucrez în cadrul unității militare actuale de: </h2>
+      <div class="card-body">
+        <mat-form-field class="field">
+          <label>
+            <input matInput [(ngModel)]="personalInfo.workedInThisMilitaryUnityFor" name="10" maxlength="200">
+          </label>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div class="card" >
+      <h2 class="card-header">Lucrez în medie X ore pe zi:</h2>
+      <div class="card-body">
+        <mat-form-field class="field">
+          <label>
+            <input matInput [(ngModel)]="personalInfo.hoursPerDay" name="11" maxlength="200">
+          </label>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="card" >
+      <h2 class="card-header">Lucrez în ture: (da/nu)</h2>
+      <div class="card-body">
+        <mat-form-field class="field">
+          <label>
+            <input matInput [(ngModel)]="personalInfo.workingInTours" name="12" maxlength="200">
+          </label>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="card" *ngIf="personalInfo.workingInTours === 'da'" >
+      <h2 class="card-header">Care este programul turelor:</h2>
+      <div class="card-body">
+        <mat-form-field class="field">
+          <label>
+            <input matInput [(ngModel)]="personalInfo.program" name="13" maxlength="200">
+          </label>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+  </div>
+
+  <h1>{{brochure.title}}</h1>
+
+  <div class="scenes" *ngFor="let scene of brochure.scenes;let i = index">
+    <hr>
+    <h2>{{scene.title}}</h2>
+    <h3>{{scene.description}}</h3>
+    <p>Pornind de la scenariul prezentat:
+    </p>
+    <div  mat-dialog-content class="field-container questions" *ngFor="let question of scene.questions; let j=index">
+        <div mat-dialog-content class="field-container" [ngSwitch]="question.type">
+
+
+          <div class="card" *ngSwitchCase="'short-answer'">
+            <h2 class="card-header">{{question.text}}</h2>
+            <div class="card-body">
+              <mat-form-field class="field">
+                <label>
+                  <input matInput [(ngModel)]="answers[i][j]" name="title" maxlength="200">
+                </label>
+              </mat-form-field>
+            </div>
+          </div>
+
+
+          <div class="card" *ngSwitchCase="'check-answer'">
+            <h2 class="card-header">{{question.text}}</h2>
+            <div class="card-body">
+                <h3>Options</h3>
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button class="rdn" [(ngModel)]="answers[i][j]" name="optionC" *ngFor="let option of question.answers.split(';')" value="{{option}}">{{option}}</mat-radio-button>
+                  </mat-radio-group>
+            </div>
+          </div>
+
+          <div class="card" *ngSwitchCase="'grade-answer'">
+            <h2 class="card-header">{{question.text}}</h2>
+            <div class="card-body">
+              <h3>Grades</h3>
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button class="rdn" name="optionG" [(ngModel)]="answers[i][j]"  *ngFor="let option of ['1=Deloc',2,3,4,5,6,'7=In mare masura']" value="{{option}}">{{option}}</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+  <button (click)="sendData(personalInfo, answers, brochure)" class="btn btn-danger btn-lg btn-block">Trimiteti!</button>
+</form>

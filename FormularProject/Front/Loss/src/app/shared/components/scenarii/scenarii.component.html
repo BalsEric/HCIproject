@@ -1,0 +1,21 @@
+
+<div class="top-container dashboard">
+  <h1>Brosuri</h1>
+  <button id="addButton" mat-icon-button
+          (click)="openAddDialog()"
+          matTooltip="Add a new brochure"
+          matTooltipPosition="right"
+          onclick="this.blur()"> Adaugati brosura
+    <mat-icon class="addshit"> add_circle_outline </mat-icon>
+  </button>
+</div>
+<hr>
+<div class="elements-container">
+  <ng-container *ngFor="let scene of scenes;let i = index;">
+    <app-scene class="indiv" [scene]="scene"
+                  (handleDelete)="onDelete(i)"
+                  (handleUpdate)="onUpdate($event)">
+    </app-scene>
+  </ng-container>
+
+</div>

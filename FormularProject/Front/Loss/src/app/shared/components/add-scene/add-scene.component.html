@@ -1,0 +1,33 @@
+<h1 mat-dialog-title> Adaugati o brosura noua</h1>
+
+<form>
+  <div mat-dialog-content class="field-container">
+
+    <mat-form-field class="field">
+      <mat-label>Titlu</mat-label>
+      <label>
+        <input matInput placeholder="title" [(ngModel)]="scene.title" name="title">
+      </label>
+    </mat-form-field>
+
+    <h2>Scenarii</h2>
+
+    <div class="container quest">
+    <mat-checkbox *ngFor="let formular of formulars;let i = index;" [checked]="checked[i]"
+                  (change)="onToggle($event, i)" >
+      <mat-card>
+        <p>{{formular.title}}</p>
+      </mat-card>
+    </mat-checkbox>
+    </div>
+
+    <div mat-dialog-actions>
+      <button type="submit" *ngIf="(getValue() | async) == false" mat-button (click)="addScene()"
+              [disabled]="!scene.title">
+        Confirm
+      </button>
+      <button type="button" mat-button (click)="onNoClick()">Cancel</button>
+    </div>
+  </div>
+</form>
+

@@ -1,0 +1,50 @@
+<h1 mat-dialog-title> Adaugati o scena noua</h1>
+<form>
+  <div mat-dialog-content class="field-container">
+    <mat-form-field class="field">
+      <mat-label>Titlu</mat-label>
+      <label>
+        <input matInput placeholder="title" [(ngModel)]="formular.title" name="title">
+      </label>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>Descriere</mat-label>
+      <label>
+        <input matInput placeholder="description" [(ngModel)]="formular.description" name="description">
+      </label>
+    </mat-form-field>
+
+    <h2>Adaugati Intrebari</h2>
+    <div class="container quest">
+      <app-qtype *ngFor="let question of questions; let index = index" [question]="question" [type]="'add'" [index]="index"></app-qtype>
+    </div>
+    <div class="card">
+      <h5 class="card-header">Q {{questionNr}}</h5>
+      <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <mat-select [(value)]="type">
+                  <mat-option  *ngFor="let otype of qtypes" [value]="otype">
+                    {{otype}}
+                  </mat-option>
+                </mat-select>
+            </div>
+          <div class="row">
+            <button class="btn btn-warning" (click)="addQuestion()">Add question</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div mat-dialog-actions>
+      <button type="submit" *ngIf="(getValue() | async) == false" mat-button (click)="addFormular()"
+              [disabled]="!formular.title || !formular.description">
+        Confirm
+      </button>
+      <button type="button" mat-button (click)="onNoClick()">Cancel</button>
+    </div>
+  </div>
+</form>
+

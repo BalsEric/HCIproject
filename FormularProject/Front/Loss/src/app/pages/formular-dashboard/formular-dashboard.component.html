@@ -1,0 +1,24 @@
+
+<div class="top-container dashboard">
+  <h1> Situații Conflictuale</h1>
+  <button id="addButton" mat-icon-button
+          (click)="openAddDialog()"
+          matTooltip="Add a new scene"
+          matTooltipPosition="right"
+          onclick="this.blur()"> Adaugati Scene
+    <mat-icon class="addshit"> add_circle_outline </mat-icon>
+  </button>
+</div>
+<hr>
+<div class="elements-container">
+  <div *ngIf="formulars.length === 0">
+    <app-empty-list-message></app-empty-list-message>
+  </div>
+    <ng-container *ngFor="let formular of formulars;let i = index;">
+        <app-formular class="indiv" [formular]="formular"
+                        (handleDelete)="onDelete(i)"
+                        (handleUpdate)="onUpdate($event)">
+        </app-formular>
+    </ng-container>
+
+</div>

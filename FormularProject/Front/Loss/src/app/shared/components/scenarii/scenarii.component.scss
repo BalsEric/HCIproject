@@ -1,0 +1,45 @@
+@import "src/app/shared/styles/mixins";
+
+:host {
+  @include style-for-tabs;
+  @include crud-list-item;
+  .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  mat-panel-title {
+    font-size: large;
+    font-weight: bold;
+  }
+ .addshit {
+   font-size:30px;
+ }
+  .dashboard {
+    display: flex;
+    h1 {
+      font-size: 350%;
+      letter-spacing: 1.5px;
+    }
+  }
+  .me-text {
+    text-align: center;
+    color:black;
+    font-weight: 400;
+  }
+  section {
+    margin-bottom:40px;
+  }
+  .jumbotron {
+    border-radius: 30px;
+  }
+  img {
+    border-radius: 25px;
+  }
+  a {
+    margin-top: 20px;
+  }
+  table {
+    width: 100%;
+    margin-top:30px;
+  }
+
+}

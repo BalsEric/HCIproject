@@ -1,0 +1,60 @@
+<form>
+  <div mat-dialog-content class="field-container" [ngSwitch]="question.type">
+
+    <div class="card" *ngSwitchCase="'short-answer'">
+      <h5 class="card-header">Tip intrebare: {{question.type}}</h5>
+      <div class="card-body">
+        <mat-form-field class="field">
+          <input matInput [(ngModel)]="question.text" name="title" maxlength="400">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="card" *ngSwitchCase="'check-answer'">
+      <h5 class="card-header">Tip intrebare: {{question.type}}</h5>
+      <div class="card-body">
+        <div class="container">
+          <div class="row">
+            <mat-form-field class="field">
+              <mat-label></mat-label>
+
+                <input matInput [(ngModel)]="question.text" name="title" maxlength="400">
+
+            </mat-form-field>
+          </div>
+          <h3>Options</h3>
+          <div class="container">
+            <div class="row">
+              <mat-form-field class="field">
+                <mat-label></mat-label>
+
+                  <input matInput [(ngModel)]="question.answers" name="answers" maxlength="400">
+
+              </mat-form-field>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" *ngSwitchCase="'grade-answer'">
+      <h5 class="card-header">Tip intrebare: {{question.type}}</h5>
+      <div class="card-body">
+        <mat-form-field class="field">
+
+            <input matInput [(ngModel)]="question.text" name="title" maxlength="400">
+
+        </mat-form-field>
+      </div>
+    </div>
+    <div *ngIf="type == 'edit'">
+      <mat-card>
+        <mat-card-actions>
+          <button (click)="openDeleteDialog()" mat-button onclick="this.blur()">Stergere</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+</form>

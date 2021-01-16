@@ -1,0 +1,9 @@
+<mat-card>
+  <mat-card-title>{{formular.title}}</mat-card-title>
+  <mat-card-actions *ngIf="type !== 'add'">
+    <button (click)="openView(formular)" mat-flat-button onclick="this.blur()">Vizionati</button>
+    <button (click)="openEditDialog(formular)"  mat-flat-button onclick="this.blur()">Editare</button>
+    <button (click)="openDeleteDialog(formular._id)" mat-button onclick="this.blur()">Stergere</button>
+  </mat-card-actions>
+</mat-card>
+

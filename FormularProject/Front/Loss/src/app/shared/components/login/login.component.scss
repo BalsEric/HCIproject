@@ -1,0 +1,12 @@
+@import "src/app/shared/styles/mixins";
+:host {
+  @include style-for-tabs;
+  @include crud-list-item;
+  }
+.mat-card-content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+

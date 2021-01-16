@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Editare Scena</h1>
+<form>
+  <div mat-dialog-content class="field-container">
+    <mat-form-field class="field">
+      <mat-label>Titlu nou</mat-label>
+      <label>
+        <input matInput name="Title" required [(ngModel)]="editedFormular.title">
+      </label>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>Descriere noua</mat-label>
+      <label>
+        <input matInput name="Description" required
+               [(ngModel)]="editedFormular.description">
+      </label>
+    </mat-form-field>
+  </div>
+
+  <div class="elements-container">
+    <h2>Schimbare Intrebari</h2>
+    <div class="container quest">
+      <app-qtype *ngFor="let question of editedFormular.questions; let index = index" [type]="'edit'" [question]="question" [index]="index"  (handleDeleteQ)="onDelete(index)"></app-qtype>
+    </div>
+  </div>
+
+  <div mat-dialog-actions>
+    <button type="submit" mat-button (click)="onYesClick()">Confirm</button>
+    <button type="button" mat-button (click)="onNoClick()">Cancel</button>
+  </div>
+</form>
+

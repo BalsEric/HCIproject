@@ -1,0 +1,57 @@
+@import "src/app/shared/styles/variables";
+
+@mixin style-for-tabs {
+  font-family: 'Montserrat', sans-serif;
+  h1 {
+    display: inline-block;
+  }
+
+  .elements-container {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+
+  .top-container {
+    min-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+
+@mixin crud-list-item {
+  min-width: 400px;
+  margin: 10px;
+
+  .mat-button {
+    text-transform: uppercase;
+    color: red;
+    background-color: lightgrey;
+  }
+
+  .mat-flat-button {
+    text-transform: uppercase;
+    background-color: $button-color;
+    color: white;
+  }
+
+  .mat-card-title {
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+
+  .mat-card-content {
+    font-size: 16px;
+  }
+
+  .mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  mat-form-field {
+    margin-left: 2.5rem;
+    width: calc(100% - 2.5rem);
+  }
+}

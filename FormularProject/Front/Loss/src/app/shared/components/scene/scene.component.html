@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-title>{{scene.title}}</mat-card-title>
+  <mat-card-actions *ngIf="type !== 'edit'; else elseBlock">
+    <button (click)="generateLink(scene._id)" mat-flat-button onclick="this.blur()">Generate Link</button>
+    <button (click)="openView(scene)" mat-flat-button onclick="this.blur()">Vizionati</button>
+    <button (click)="openEditDialog(scene)" mat-flat-button onclick="this.blur()">Editare</button>
+    <button (click)="openDeleteDialog(scene._id)" mat-button onclick="this.blur()">Stergere</button>
+  </mat-card-actions>
+  <ng-template #elseBlock>
+    <button (click)="openDeleteEdit()" mat-button onclick="this.blur()">Stergere</button>
+  </ng-template>
+</mat-card>
+

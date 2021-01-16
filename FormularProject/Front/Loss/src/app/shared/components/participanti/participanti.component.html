@@ -1,0 +1,91 @@
+<div class="top-container dashboard">
+  <h1>Participanti</h1>
+</div>
+<button (click)="Download()" class="download">Download Data</button>
+
+<table mat-table [dataSource]="participants" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let participant"> {{participant.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Code">
+    <th mat-header-cell *matHeaderCellDef> Code </th>
+    <td mat-cell *matCellDef="let participant"> {{participant.personalCode}}</td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="FLOTTB">
+    <th mat-header-cell *matHeaderCellDef> FLOTTB </th>
+    <td mat-cell *matCellDef="let participant"> {{participant.firstLetterOfTheTownBornIn}}</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="FLOTRB">
+      <th mat-header-cell *matHeaderCellDef> FLOTRB </th>
+    <td mat-cell *matCellDef="let participant"> {{participant.firstLetterOfTheRegionBornIn}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="SOTL2DOBY">
+    <th mat-header-cell *matHeaderCellDef> SOTL2DOBY </th>
+    <td mat-cell *matCellDef="let participant"> {{participant.sumOfTheLast2DigitsOfBirthYear}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="SODAM">
+    <th mat-header-cell *matHeaderCellDef> SODAM </th>
+    <td mat-cell *matCellDef="let participant"> {{participant.sumOfDayAndMonth}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef> Age </th>
+    <td mat-cell *matCellDef="let participant"> {{participant.age}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef> Type </th>
+    <td mat-cell *matCellDef="let participant"> {{participant.type}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="PT">
+    <th mat-header-cell *matHeaderCellDef> PT </th>
+    <td mat-cell *matCellDef="let participant"> {{participant.personalType}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="MG">
+    <th mat-header-cell *matHeaderCellDef> MG </th>
+    <td mat-cell *matCellDef="let participant"> {{participant.militaryGrade}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="WF">
+    <th mat-header-cell *matHeaderCellDef> WF </th>
+    <td mat-cell *matCellDef="let participant"> {{participant.workedFor}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="WINTMUF">
+    <th mat-header-cell *matHeaderCellDef> WINTMUF </th>
+    <td mat-cell *matCellDef="let participant"> {{participant.workedInThisMilitaryUnityFor}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="HPD">
+    <th mat-header-cell *matHeaderCellDef> HPD </th>
+    <td mat-cell *matCellDef="let participant"> {{participant.hoursPerDay}}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="WIT">
+    <th mat-header-cell *matHeaderCellDef> workingInTours </th>
+    <td mat-cell *matCellDef="let participant"> {{participant.workingInTours}}</td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
